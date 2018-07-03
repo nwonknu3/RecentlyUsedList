@@ -2,15 +2,15 @@ package com.develogical;
 
 import java.util.*;
 
-public class RecentlyUsedList {
-    private List items = new ArrayList();
+public class RecentlyUsedList<E> {
+    private List<E> items = new ArrayList<E>();
 
     public boolean isEmpty() {
         return items.isEmpty();
 
     }
 
-    public void add(Object item) {
+    public void add(E item) {
         if (items.contains(item)) {
             items.remove(item);
         }
@@ -18,7 +18,7 @@ public class RecentlyUsedList {
         items.add(item);
     }
 
-    public Object getMostRecentItem() {
+    public E getMostRecentItem() {
         return items.get(items.size() -1);
     }
 
