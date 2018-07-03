@@ -1,6 +1,5 @@
 package com.develogical;
 
-import com.sun.jdi.InvalidTypeException;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;

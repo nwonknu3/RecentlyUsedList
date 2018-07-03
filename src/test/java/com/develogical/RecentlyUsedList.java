@@ -1,9 +1,10 @@
 package com.develogical;
 
+
 import java.util.*;
 
 public class RecentlyUsedList<E> {
-    private List<E> items = new ArrayList<E>();
+    private Stack<E> items = new Stack<E>();
 
     public boolean isEmpty() {
         return items.isEmpty();
@@ -11,15 +12,15 @@ public class RecentlyUsedList<E> {
     }
 
     public void add(E item) {
-        if (items.contains(item)) {
-            items.remove(item);
-        }
-
+        items.remove(item);
         items.add(item);
     }
 
-    public E getMostRecentItem() {
-        return items.get(items.size() -1);
+    public E getMostRecentItem() throws IndexOutOfBoundsException {
+        if (items.empty()) {
+            throw new IndexOutOfBoundsException();
+        }
+        return items.pop();
     }
 
     public int size(){
