@@ -21,7 +21,7 @@ public class RecentlyUsedListTest {
         RecentlyUsedList list = new RecentlyUsedList();
         list.add(new Object());
 
-        assertEquals(1, list.items.size());
+        assertEquals(1, list.size());
     }
 
 
@@ -41,7 +41,7 @@ public class RecentlyUsedListTest {
 
         list.add(testItem);
 
-        assertEquals(testItem, list.retrieve());
+        assertEquals(testItem, list.getMostRecentItem());
     }
 
 
@@ -54,7 +54,7 @@ public class RecentlyUsedListTest {
 
         list.add(testItem2);
 
-        assertEquals(testItem2, list.retrieve());
+        assertEquals(testItem2, list.getMostRecentItem());
     }
 
 
@@ -66,7 +66,7 @@ public class RecentlyUsedListTest {
         list.add(44);
         list.add(43);
 
-        assertEquals(3, list.items.size());
+        assertEquals(3, list.size());
     }
 
 
@@ -78,7 +78,7 @@ public class RecentlyUsedListTest {
         list.add(44);
         list.add(43);
 
-        assertEquals(43, list.retrieve());
+        assertEquals(43, list.getMostRecentItem());
     }
 
 

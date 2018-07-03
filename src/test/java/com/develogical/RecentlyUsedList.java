@@ -3,7 +3,7 @@ package com.develogical;
 import java.util.*;
 
 public class RecentlyUsedList {
-    public List items = new ArrayList();
+    private List items = new ArrayList();
 
     public boolean isEmpty() {
         return items.isEmpty();
@@ -18,7 +18,12 @@ public class RecentlyUsedList {
         items.add(item);
     }
 
-    public Object retrieve() {
+    public Object getMostRecentItem() {
         return items.get(items.size() -1);
+    }
+
+    public int size(){
+        return items.size();
+
     }
 }
